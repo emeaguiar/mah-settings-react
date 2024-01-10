@@ -1,0 +1,19 @@
+{
+  "name": "mah-settings-react",
+  "version": "1.0.0",
+  "description": "Tutorial para página de opciones en React y WordPress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "build": "wp-scripts build",
+    "dev": "wp-scripts start"
+  },
+  "author": "Mario Aguiar",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^9.0.0",
+    "@wordpress/scripts": "^26.19.0"
+  }
+}
