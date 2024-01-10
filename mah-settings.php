@@ -15,7 +15,6 @@ require_once __DIR__ . '/php/class-mah-settings.php';
 
 use Mah_Settings\Settings;
 
-
 // Exit if accessed directly.
 
 if ( ! defined( 'ABSPATH' ) ) {
