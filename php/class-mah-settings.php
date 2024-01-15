@@ -33,6 +33,8 @@ class Settings {
     public function init(): void {
         add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
         add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+        add_action( 'admin_init', [ $this, 'register_settings' ] );
+        add_action( 'rest_api_init', [ $this, 'register_settings' ] );
     }
 
     /**
@@ -86,6 +88,36 @@ class Settings {
             $asset['dependencies'],
             $asset['version'],
             true
+        );
+
+        wp_enqueue_style( 'wp-components' );
+    }
+
+    /**
+     * Registra las opciones.
+     * 
+     * @return void 
+     */
+    public function register_settings(): void {
+        register_setting(
+            'mah_settings',
+            'mah_api_key',
+            [
+                'description'       => __( 'API Key', 'mah-settings' ),
+                'sanitize_callback' => 'sanitize_text_field',
+                'show_in_rest'      => true,
+                'type'              => 'string',
+            ]
+        );
+
+        register_setting(
+            'mah_settings',
+            'mah_function',
+            [
+                'description'       => __( 'Funcion X', 'mah-settings' ),
+                'show_in_rest'      => true,
+                'type'              => 'boolean',
+            ]
         );
     }
 }
