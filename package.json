@@ -8,7 +8,8 @@
     "start": "wp-env start",
     "stop": "wp-env stop",
     "build": "wp-scripts build",
-    "dev": "wp-scripts start"
+    "dev": "wp-scripts start",
+    "plugin-zip": "wp-scripts plugin-zip"
   },
   "author": "Mario Aguiar",
   "license": "ISC",
